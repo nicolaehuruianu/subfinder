@@ -13,4 +13,6 @@ RUN apk -U upgrade --no-cache \
     && apk add --no-cache bind-tools ca-certificates
 COPY --from=build-env /app/v2/subfinder /usr/local/bin/
 
+#LABEL com.circleci.preserve-entrypoint=true
+
 ENTRYPOINT ["subfinder"]
